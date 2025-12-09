@@ -1,0 +1,14 @@
+/* Global styles */
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #0d1b2a;
+  color: #333;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Remove any default spacing between sections */
+}

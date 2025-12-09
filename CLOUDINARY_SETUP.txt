@@ -1,0 +1,52 @@
+CLOUDINARY SETUP INSTRUCTIONS
+==============================
+
+Your Cloudinary Credentials:
+- Cloud Name: dgvxbabux
+- API Key: 537953111953213
+- API Secret: 8FARQMNojMu64pVXj6nGUmD1cXQ
+
+IMPORTANT: Set up Unsigned Upload Preset
+-----------------------------------------
+
+1. Go to https://cloudinary.com/console
+2. Login with your account
+3. Navigate to Settings > Upload
+4. Scroll down to "Upload presets"
+5. Click "Add upload preset"
+6. Set the following:
+   - Preset name: ml_default (or any name you prefer)
+   - Signing mode: Unsigned
+   - Folder: visitors (optional, to organize uploads)
+   - Click "Save"
+
+7. If you use a different preset name, update it in:
+   frontend/src/pages/Register.jsx
+   Line ~45: formData.append('upload_preset', 'YOUR_PRESET_NAME');
+
+Current Implementation:
+-----------------------
+✓ User model updated with profileImage field
+✓ Register component handles image upload for visitors
+✓ Image uploaded to Cloudinary before registration
+✓ Cloudinary URL saved in MongoDB
+✓ Image preview shown before upload
+✓ Form validation ensures visitors upload profile image
+
+How It Works:
+-------------
+1. Visitor selects an image during registration
+2. Image preview is shown immediately
+3. When form is submitted:
+   - Image is uploaded to Cloudinary
+   - Cloudinary returns secure URL
+   - URL is sent to backend with registration data
+   - URL is stored in MongoDB User model
+
+Security Note:
+--------------
+For production, consider:
+- Implementing signed uploads from backend
+- Adding file size validation
+- Adding file type validation
+- Implementing image optimization

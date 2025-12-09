@@ -1,0 +1,236 @@
+/* ===================== App Features Section ===================== */
+.app-features-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 100px 40px;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-features-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h60v60H0z" fill="none"/><path d="M30 0v60M0 30h60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+  opacity: 0.3;
+}
+
+.features-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.features-main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.features-main-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* ===================== Features Grid ===================== */
+.features-layout-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-grid-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 400px;
+}
+
+.feature-card-large {
+  grid-column: span 2;
+}
+
+.feature-card-small {
+  grid-column: span 1;
+}
+
+.feature-grid-card.selected {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: 500px;
+  z-index: 1000;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.feature-card-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.feature-grid-card:hover .feature-card-image {
+  transform: scale(1.05);
+}
+
+.feature-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.9) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.feature-grid-card:hover .feature-card-overlay {
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.feature-grid-card.selected .feature-card-overlay {
+  background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* ===================== Card Content ===================== */
+.feature-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  color: #fff;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.feature-card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #fff;
+  transition: font-size 0.3s ease;
+}
+
+.feature-grid-card.selected .feature-card-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.feature-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  opacity: 0.8;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature-grid-card:hover .feature-card-description {
+  max-height: 100px;
+  opacity: 1;
+}
+
+.feature-card-content.expanded .feature-card-description {
+  max-height: 200px;
+  opacity: 1;
+  font-size: 1.1rem;
+}
+
+/* ===================== Modal Overlay ===================== */
+.feature-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===================== Responsive Design ===================== */
+@media (max-width: 1024px) {
+  .features-layout-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-card-large,
+  .feature-card-small {
+    grid-column: span 1;
+  }
+
+  .feature-grid-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-features-section {
+    padding: 60px 30px;
+  }
+
+  .features-main-title {
+    font-size: 2.5rem;
+  }
+
+  .features-intro {
+    margin-bottom: 50px;
+  }
+
+  .features-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .feature-grid-card {
+    height: 300px;
+  }
+
+  .feature-grid-card.selected {
+    width: 95%;
+    height: 450px;
+  }
+
+  .feature-card-title {
+    font-size: 1.5rem;
+  }
+
+  .feature-grid-card.selected .feature-card-title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,350 @@
+.emergency-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fef5f5 0%, #fff5f5 100%);
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+.emergency-header {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-btn {
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+.emergency-badge {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, #7b2d8e 0%, #6a1b7b 100%);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.emergency-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(220, 38, 38, 0.1);
+  border: 3px solid #fee2e2;
+}
+
+.emergency-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pulse-icon {
+  font-size: 4rem;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.emergency-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(220, 38, 38, 0.1);
+}
+
+.emergency-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.emergency-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.optional {
+  font-weight: 400;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.required {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.form-input {
+  padding: 0.9rem 1rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #dc2626;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+}
+
+.form-input:required:invalid {
+  border-color: #fca5a5;
+}
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  min-height: 120px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #dc2626;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+}
+
+.voice-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  border: 2px solid #7b2d8e;
+  border-radius: 25px;
+  color: #7b2d8e;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(123, 45, 142, 0.2);
+}
+
+.voice-btn:hover {
+  background: #7b2d8e;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(123, 45, 142, 0.3);
+}
+
+.voice-btn.listening {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #fff;
+  animation: recording-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes recording-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+}
+
+.mic-icon {
+  font-size: 1.2rem;
+}
+
+.mic-icon.recording {
+  animation: mic-bounce 0.6s ease-in-out infinite;
+}
+
+@keyframes mic-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.recording-indicator {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.voice-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.call-medical-btn {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+.call-medical-btn:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(220, 38, 38, 0.4);
+}
+
+.call-medical-btn:active {
+  transform: translateY(-1px);
+}
+
+.emergency-benefits {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 12px;
+  border: 2px solid #86efac;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #166534;
+}
+
+.check-icon {
+  font-size: 1.2rem;
+}
+
+.emergency-info {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+.info-text {
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .emergency-container {
+    padding: 1rem;
+  }
+
+  .emergency-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .emergency-title {
+    font-size: 2rem;
+  }
+
+  .emergency-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .emergency-badge {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .emergency-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .emergency-title {
+    font-size: 1.75rem;
+  }
+
+  .voice-btn {
+    position: static;
+    width: 100%;
+    margin-top: 0.75rem;
+    justify-content: center;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+    padding-bottom: 0.9rem;
+  }
+}

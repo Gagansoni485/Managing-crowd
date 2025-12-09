@@ -1,0 +1,83 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    FACE RECOGNITION LOGIN - QUICK START                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📍 LOCATION: computerVision\faceRecognition\
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 FIRST TIME SETUP
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Sync faces from database (REQUIRED before first use)
+   
+   → Double-click: sync_faces.bat
+   OR
+   → Run: python sync_faces.py
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 START APPLICATION
+═══════════════════════════════════════════════════════════════════════════════
+
+   → Double-click: start_face_login.bat
+   OR
+   → Run: python main.py
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 HOW IT WORKS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. User positions face in front of camera
+2. Click "Face Login" button
+3. System checks:
+   ✓ Is face recognized?
+   ✓ Does user have booking today?
+   ✓ Is current time within slot window?
+4. Entry GRANTED or DENIED
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⏰ TIME VALIDATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Entry Window: 30 minutes BEFORE slot → 1 hour AFTER slot start
+
+Example:
+  Booking Slot: 09:00 AM - 10:00 AM
+  Entry Window: 08:30 AM - 10:00 AM ✓
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔄 SYNC NEW USERS
+═══════════════════════════════════════════════════════════════════════════════
+
+When new users register through web app:
+→ Click "Sync Faces from DB" button in application
+OR
+→ Run sync_faces.bat
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 KEY FEATURES
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ No registration at kiosk (web app only)
+✓ Database-driven user data
+✓ Automatic booking validation
+✓ Time slot verification
+✓ Entry logging for audit
+✓ Real-time face recognition
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 LOGS
+═══════════════════════════════════════════════════════════════════════════════
+
+Entry logs saved to: login_log.txt
+Format: Name, Email, Timestamp, Status, TokenNumber
+
+═══════════════════════════════════════════════════════════════════════════════
+
+For full documentation, see: FACE_RECOGNITION_SETUP.txt
