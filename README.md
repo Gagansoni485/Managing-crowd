@@ -1,7 +1,7 @@
 <h1 align="center">👥 Crowd Density Estimation & Temporal Behavior Analysis</h1>
 
 <p align="center">
-  <img src="images/interface.png" width="800" alt="Project Interface"/>
+  <img src="https://github.com/Gagansoni485/Managing-crowd/blob/main/Screenshot%202026-02-27%20111926.png?raw=true" width="800" alt="Project Interface"/>
 </p>
 
 <h3 align="center">
