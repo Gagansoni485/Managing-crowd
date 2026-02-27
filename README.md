@@ -47,7 +47,7 @@ While modern object detection models can estimate crowd counts per frame, real-w
 
 - <p align="center">
   <img src="https://github.com/Gagansoni485/Managing-crowd/blob/main/Screenshot%202026-02-27%20111832.png?raw=true" width="400" alt="Crowd Detection Output"/>
-  <img src="images/heatmap_output.png" width="400" alt="Crowd Density Heatmap"/>
+  <img src="https://github.com/Gagansoni485/Managing-crowd/blob/main/Screenshot%202026-02-27%20112139.png?raw=true" width="400" alt="Crowd Density Heatmap"/>
 </p>
 
 As a result, frame-by-frame estimates fluctuate heavily, making it difficult to decide:
