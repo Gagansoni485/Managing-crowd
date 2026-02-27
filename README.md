@@ -1,5 +1,9 @@
 <h1 align="center">👥 Crowd Density Estimation & Temporal Behavior Analysis</h1>
 
+<p align="center">
+  <img src="images/interface.png" width="800" alt="Project Interface"/>
+</p>
+
 <h3 align="center">
 Computer Vision • Crowd Monitoring • Spatio-Temporal Modeling
 </h3>
@@ -39,7 +43,12 @@ While modern object detection models can estimate crowd counts per frame, real-w
 - Occlusion in dense crowds  
 - Lighting variations  
 - Irregular human motion  
-- Camera movement  
+- Camera movement
+
+- <p align="center">
+  <img src="images/detection_output.png" width="400" alt="Crowd Detection Output"/>
+  <img src="images/heatmap_output.png" width="400" alt="Crowd Density Heatmap"/>
+</p>
 
 As a result, frame-by-frame estimates fluctuate heavily, making it difficult to decide:
 
